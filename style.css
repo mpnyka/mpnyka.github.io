@@ -1,0 +1,179 @@
+body{
+	font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+  font-size: 93.75%;
+  line-height: 1.66667;
+  background-color: #f1f3f2;
+  color: #4c4e4d;
+  width: 960px;
+  margin:50px auto;
+  overflow-x: hidden;
+
+}
+h1{
+  position: relative;
+	font-family: Balto,sans-serif;
+  font-weight: 700;
+  font-size: 3em;
+  text-align: center;
+  color: white;
+  z-index: 4
+}
+::selection {
+  background-color: #fff200;
+}
+
+#graph1{
+  font: 10px sans-serif;
+  line-height: 1.5;
+  position: relative;
+  padding: 10px;
+  color: #4c4e4d;
+  align:center;
+
+}
+
+#graph2{
+  font: 10px sans-serif;
+  line-height: 1.5;
+  position: relative;
+  padding: 30px;
+  color: #4c4e4d;
+
+}
+
+#graph3{
+  font: 10px sans-serif;
+  line-height: 1.5;
+  position: relative;
+  padding: 10px;
+  color: #4c4e4d;
+
+}
+
+.post{
+  position: relative;
+  font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+  font-weight: 400;
+  font-size: 1.15em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: .01rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  z-index: 1
+}
+section { 
+    display: block;
+    box-sizing: border-box;
+    clear:both;
+    padding-top: 80px;
+    padding-bottom: 140px;
+  margin-bottom: 30px;
+}
+a:link{
+	  color: #6d98a8;
+  text-decoration: none;
+}
+
+.section-backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  height:450px;
+  background-image: url("http://blogs.spectator.co.uk/files/2015/03/468201140.jpg");
+  display: block;
+}
+
+.picture{
+	  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 40px;
+  -webkit-margin-end: 40px;
+  width:100%;
+}
+
+span{
+	  display: table-cell;
+	    padding-right: 2em;
+  border-right: solid 1px #d9d6d7;
+}
+.byline{
+  position:relative;
+	font-family: Harriet,serif;
+  font-style: italic;
+  font-size: 15px;
+  margin-top: 7.5px;
+  margin-bottom: 15px;
+  z-index: 3
+}
+.caption {
+	  color: #979797;
+  font-size: .8em;
+  padding: 1em 5px .75em;
+  border-bottom: solid 1px #d9d6d7;
+  display: table;
+  width: 100%;
+}
+.social
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.y.axis line, .y.axis path {
+  fill: none;
+  stroke: #000;
+}
+
+.x.axis path {
+  display:none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.city circle {
+  fill: none;
+  stroke: steelblue;
+}
+
+.source {
+  font-family: Alright Sans,sans-serif;
+  font-size: 10px;
+  color: #C4C7BE;
+}
+
+/*second graph*/
+
+
+.bullet { font: 10px sans-serif; }
+.bullet .marker { stroke: #000; stroke-width: 2px; }
+.bullet .tick line { stroke: #666; stroke-width: .5px; }
+.bullet .range.s0 { fill: #eee; }
+.bullet .range.s1 { fill: #cdccce; }
+.bullet .range.s2 { fill: #cdccce; }
+.bullet .measure.s0 { fill: lightsteelblue; }
+.bullet .measure.s1 { fill: #634163; }
+.bullet .title { font-size: 14px; font-weight: bold; }
+.bullet .subtitle { fill: #999; }
+
+.legend rect {
+  fill:white;
+  stroke:black;
+  opacity:0.8;}
+

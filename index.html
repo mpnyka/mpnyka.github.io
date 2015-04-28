@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+     <link rel="stylesheet" type="text/css" href="style.css">
+    <title></title>
+  </head>
+  <body>
+<section>
+  <div class="section-backgroundImage">
+    
+  </div>
+  <h1> They Are Coming to Eat Your Children</h1>
+</section>
+<div class="byline">
+   Updated by <a href="http://twitter.com/mireiatriguero">Mireia Triguero Roura</a> on March 4, 2015
+   </div>
+<div class="post">
+  <p>“26 million people in Europe are looking for jobs. And whose jobs are they after?” Big signs like this sprung in the UK preceding the elections. The message is clear: if Britons don’t have jobs it’s because of all those immigrants that are coming to steal them. It isn’t a new message either. There have always been people everywhere in Europe who believe that. What’s worrisome is that the number of people who believe this is increasing after 7 years of economic uncertainty and sustained high levels of unemployment. </p>
+
+<p>However, how much has immigration actually increased in these countries?</p> 
+   <p>Seven years after the financial crisis, Europe is still soring. With elections scheduled in eleven of the 28 member-states of the European Union, the political debate has been highly occupied with Eurosceptic discourses, and xenophobic and anti-immigration agendas. This is not surprising, considering the current economic state of Europe. Southern countries have still yet to recover to pre-crisis levels of growth and unemployment rates; Northern countries are keeping afloat with considerable lower levels of growth. </p>
+
+<p>Immigration has become the scapegoat for politicians that cannot promise more jobs or better life quality conditions to their citizens. The truth is immigration in the European Union in general decreased after the financial crisis and has still not reached pre-crisis levels. </p>
+
+<p>A closer look to specific countries show us that indeed, immigration patterns were affected by the crisis and its effects vary a lot depending on the countries. </p>
+
+<span id="graph1"></span>
+<span id="graph3"></span>
+<p>“It’s the economy, stupid”</p>
+
+<p>While immigration in Spain sinked after 2008, it starting soaring in Germany. This 
+
+
+<p>We see stories every day about refugee seekers dying in boats or being denied access and although this is a terrible humanitarian crisis that needs to be addressed, asylum seekers are not the biggest immigrants in Europe; Europeans are. </p>
+
+
+</div>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script src="bullet.js"></script>
+<script src="d3.legend.js"></script>
+
+<div id="graph2"> </div>
+<h2> hola? </h2>
+
+<script>
+
+(function(){
+var margin = {top: 5, right: 40, bottom: 20, left: 120},
+    width = 960 - margin.left - margin.right,
+    height = 50 - margin.top - margin.bottom;
+
+var chart = d3.bullet()
+    .width(width)
+    .height(height);
+
+d3.json("bullets.json", function(error, data) {
+  var svg = d3.select("#graph2").selectAll("svg")
+      .data(data)
+    .enter().append("svg")
+      .attr("class", "bullet")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      .call(chart);
+
+  var title = svg.append("g")
+      .style("text-anchor", "end")
+      .attr("transform", "translate(-6," + height / 2 + ")");
+
+  title.append("text")
+      .attr("class", "title")
+      .text(function(d) { return d.title; });
+
+  title.append("text")
+      .attr("class", "subtitle")
+      .attr("dy", "1em")
+      .text(function(d) { return d.subtitle; });
+
+  
+});
+})();
+</script>
+
+<script>
+(function(){
+var margin = {top: 20, right: 120, bottom: 30, left: 50},
+    width = 528 - margin.left - margin.right,
+    height = 275 - margin.top - margin.bottom;
+
+var parseDate = d3.time.format("%Y%m%d").parse;
+
+var x = d3.time.scale()
+    .range([0, width]);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var color = d3.scale.category20b()
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+
+var line = d3.svg.line()
+    .interpolate("basis")
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.close); });
+
+
+var svg = d3.select("#graph1").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.tsv("data2.tsv", function(error, data) {
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
+
+
+  data.forEach(function(d) {
+    d.date = parseDate(d.date);
+    d.close = +d.close;
+  });
+
+  var cities = color.domain().map(function(name) {
+    return {
+      name: name,
+      values: data.map(function(d) {
+        return {date: d.date, close: +d[name]};
+      })
+    };
+  });
+
+  x.domain(d3.extent(data, function(d) { return d.date; }));
+
+  y.domain([
+    d3.min(cities, function(c) { return d3.min(c.values, function(v) { return v.close; }); }),
+    d3.max(cities, function(c) { return d3.max(c.values, function(v) { return v.close; }); })
+  ]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Immigrants (thousands)");
+
+  var city = svg.selectAll(".city")
+      .data(cities)
+    .enter().append("g")
+      .attr("class", "city");
+
+  city.append("path")
+      .attr("class", "line")
+      .attr("d", function(d) { return line(d.values); })
+      .style("stroke", function(d) { return color(d.name); });
+
+  city.append("text")
+      .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
+      .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.close) + ")"; })
+      .attr("x", 3)
+      .attr("dy", ".35em")
+      .text(function(d) { return d.name; });
+  svg.append("rect")
+      .attr("class", "overlay")
+      .attr("width", width)
+      .attr("height", height);
+  city.append("text")
+   .attr("x", 400)
+   .attr("dy", 255)
+   .attr("class", "source")
+   .text("Source: OECD")
+     });
+})();
+
+
+
+
+</script>
+
+<script>
+(function(){
+var margin = {top: 20, right: 120, bottom: 30, left: 50},
+    width = 528 - margin.left - margin.right,
+    height = 275 - margin.top - margin.bottom;
+
+var parseDate = d3.time.format("%Y%m%d").parse;
+
+var x = d3.time.scale()
+    .range([0, width]);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var color = d3.scale.category20b()
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+
+var line = d3.svg.line()
+    .interpolate("basis")
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.close); });
+
+
+var svg = d3.select("#graph3").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.tsv("data4.tsv", function(error, data) {
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
+
+
+  data.forEach(function(d) {
+    d.date = parseDate(d.date);
+    d.close = +d.close;
+  });
+
+  var cities = color.domain().map(function(name) {
+    return {
+      name: name,
+      values: data.map(function(d) {
+        return {date: d.date, close: +d[name]};
+      })
+    };
+  });
+
+  x.domain(d3.extent(data, function(d) { return d.date; }));
+
+  y.domain([
+    d3.min(cities, function(c) { return d3.min(c.values, function(v) { return v.close; }); }),
+    d3.max(cities, function(c) { return d3.max(c.values, function(v) { return v.close; }); })
+  ]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Unemployment rate (%)");
+
+  var city = svg.selectAll(".city")
+      .data(cities)
+    .enter().append("g")
+      .attr("class", "city");
+
+  city.append("path")
+      .attr("class", "line")
+      .attr("d", function(d) { return line(d.values); })
+      .style("stroke", function(d) { return color(d.name); });
+
+  city.append("text")
+      .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
+      .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.close) + ")"; })
+      .attr("x", 3)
+      .attr("dy", ".35em")
+      .text(function(d) { return d.name; });
+  svg.append("rect")
+      .attr("class", "overlay")
+      .attr("width", width)
+      .attr("height", height);
+  city.append("text")
+   .attr("x", 400)
+   .attr("dy", 255)
+   .attr("class", "source")
+   .text("Source: Eurostat")
+  
+     });
+})();
+</script>
+</body>
