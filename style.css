@@ -41,17 +41,18 @@ h2{position: relative;
 }
 
 #graph1{
-  font: 10px sans-serif;
+  font: 11px arial,helvetica,sans-serif;
   line-height: 1.5;
   position: relative;
   padding: 10px;
   color: #4c4e4d;
   align:center;
 
+
 }
 
 #graph2{
-  font: 10px sans-serif;
+  font: 11px arial,helvetica,sans-serif;
   line-height: 1.5;
   position: relative;
   padding: 30px;
@@ -60,7 +61,7 @@ h2{position: relative;
 }
 
 #graph3{
-  font: 10px sans-serif;
+  font: 11px arial,helvetica,sans-serif;
   line-height: 1.5;
   position: relative;
   padding: 10px;
@@ -179,7 +180,7 @@ span{
 .source {
   font-family: Alright Sans,sans-serif;
   font-size: 10px;
-  color: #C4C7BE;
+  color: #999;
 }
 
 /*second graph*/
@@ -205,12 +206,13 @@ span{
 
   .g-age-key {
   position:relative;
-  left:700px;
+  left:600px;
   width: 50%;
   font-size: 0;
     color: #000000;
     font: 9pt Arial, sans-serif;
     margin-left: 0px;
+    margin-top: -20px;
 }
 .g-age-key-item {
   font-family: 'nyt-franklin', Arial, sans-serif;

@@ -33,8 +33,12 @@
 </div>
 
 <div id="graph1"></div>
+<div class="g-age-key">
+<p class="source"> Source: OECD </div>
 <p class="post">“It’s the economy, stupid”</p>
 <div id="graph3"></div>
+  <div class="g-age-key">
+<p class="source"> Source: Eurostat </div>
 <div class="post">
 
 
@@ -52,13 +56,15 @@
 <script src="d3.legend.js"></script>
 
 <div id="graph2">
+  </div>
   <div class="g-age-key">
+    <div class="source"> Source: OECD </div>
     <div class="g-age-key-item">
       <span class="age-key-box black-age-key-box"></span>Foreign-born employment rate (%)
     </div>
     <div class="g-age-key-item">
       <span class="age-key-box white-age-key-box"></span>Native-born employment rate (%)
-    </div>
+    
   </div>
  </div>
  
@@ -67,7 +73,7 @@
 
 (function(){
 var margin = {top: 5, right: 40, bottom: 20, left: 120},
-    width = 960 - margin.left - margin.right,
+    width = 750 - margin.left - margin.right,
     height = 50 - margin.top - margin.bottom;
 
 var chart = d3.bullet()
@@ -84,6 +90,7 @@ d3.json("bullets.json", function(error, data) {
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .call(chart);
+
 
   var title = svg.append("g")
       .style("text-anchor", "end")
@@ -199,11 +206,6 @@ d3.tsv("data2.tsv", function(error, data) {
       .attr("class", "overlay")
       .attr("width", width)
       .attr("height", height);
-  city.append("text")
-   .attr("x", 400)
-   .attr("dy", 252)
-   .attr("class", "source")
-   .text("Source: OECD")
      });
 })();
 
@@ -308,11 +310,6 @@ d3.tsv("data4.tsv", function(error, data) {
       .attr("class", "overlay")
       .attr("width", width)
       .attr("height", height);
-  city.append("text")
-   .attr("x", 400)
-   .attr("dy", 252)
-   .attr("class", "source")
-   .text("Source: Eurostat")
   
      });
 })();
