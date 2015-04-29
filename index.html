@@ -9,10 +9,17 @@
   <div class="section-backgroundImage">
     
   </div>
-  <h1> They Are Coming to Eat Your Children</h1>
+  <div><br></div>
+    <div><br></div>
+      <div><br></div>
+        <div><br></div>
+     <div><br></div>
+        <div><br></div>
+  <h1> They Are Coming to Eat <br>Your Children</h1>
+  <h2>Why immigration in Europe <br>is not the problem<br> some politicians want it to be</h2>
 </section>
 <div class="byline">
-   Updated by <a href="http://twitter.com/mireiatriguero">Mireia Triguero Roura</a> on March 4, 2015
+   Updated by <a href="http://twitter.com/mireiatriguero">Mireia Triguero Roura</a> on April 28, 2015
    </div>
 <div class="post">
   <p>“26 million people in Europe are looking for jobs. And whose jobs are they after?” Big signs like this sprung in the UK preceding the elections. The message is clear: if Britons don’t have jobs it’s because of all those immigrants that are coming to steal them. It isn’t a new message either. There have always been people everywhere in Europe who believe that. What’s worrisome is that the number of people who believe this is increasing after 7 years of economic uncertainty and sustained high levels of unemployment. </p>
@@ -23,10 +30,13 @@
 <p>Immigration has become the scapegoat for politicians that cannot promise more jobs or better life quality conditions to their citizens. The truth is immigration in the European Union in general decreased after the financial crisis and has still not reached pre-crisis levels. </p>
 
 <p>A closer look to specific countries show us that indeed, immigration patterns were affected by the crisis and its effects vary a lot depending on the countries. </p>
+</div>
 
-<span id="graph1"></span>
-<span id="graph3"></span>
-<p>“It’s the economy, stupid”</p>
+<div id="graph1"></div>
+<p class="post">“It’s the economy, stupid”</p>
+<div id="graph3"></div>
+<div class="post">
+
 
 <p>While immigration in Spain sinked after 2008, it starting soaring in Germany. This 
 
@@ -52,7 +62,6 @@
   </div>
  </div>
  
-<h2> hola? </h2>
 
 <script>
 
@@ -88,11 +97,7 @@ d3.json("bullets.json", function(error, data) {
       .attr("class", "subtitle")
       .attr("dy", "1em")
       .text(function(d) { return d.subtitle; });
-  title.append("text")
-   .attr("x", 400)
-   .attr("dy", 252)
-   .attr("class", "source")
-   .text("Source: OECD");
+  
   
 });
 })();
@@ -101,8 +106,8 @@ d3.json("bullets.json", function(error, data) {
 <script>
 (function(){
 var margin = {top: 20, right: 120, bottom: 30, left: 50},
-    width = 528 - margin.left - margin.right,
-    height = 275 - margin.top - margin.bottom;
+    width = 750 - margin.left - margin.right,
+    height = 320 - margin.top - margin.bottom;
 
 var parseDate = d3.time.format("%Y%m%d").parse;
 
@@ -210,8 +215,8 @@ d3.tsv("data2.tsv", function(error, data) {
 <script>
 (function(){
 var margin = {top: 20, right: 120, bottom: 30, left: 50},
-    width = 528 - margin.left - margin.right,
-    height = 275 - margin.top - margin.bottom;
+    width = 750 - margin.left - margin.right,
+    height = 320 - margin.top - margin.bottom;
 
 var parseDate = d3.time.format("%Y%m%d").parse;
 

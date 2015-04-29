@@ -12,11 +12,29 @@ body{
 h1{
   position: relative;
 	font-family: Balto,sans-serif;
+  letter-spacing: -0.05em;
   font-weight: 700;
-  font-size: 3em;
-  text-align: center;
+  font-size: 54px;
+  text-align: left;
+  margin-left: 90px;
+  line-height: 1;
   color: white;
+  margin-bottom:5px;
   z-index: 4
+}
+
+h2{position: relative;
+  font-family: Balto,sans-serif;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.2;
+  text-align: left;
+  margin-left: 96px;
+  color: rgba(255,255,255,0.8);
+  margin-top: 10px;
+  z-index: 4
+
 }
 ::selection {
   background-color: #fff200;
@@ -52,6 +70,8 @@ h1{
 
 .post{
   position: relative;
+  width:640px;
+  padding-left: 120px;
   font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
   font-weight: 400;
   font-size: 1.15em;
@@ -64,6 +84,7 @@ h1{
   line-height: 1.5;
   z-index: 1
 }
+
 section { 
     display: block;
     box-sizing: border-box;
@@ -78,14 +99,17 @@ a:link{
 }
 
 .section-backgroundImage {
+  min-height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   background-size: cover;
   background-position: 50% 50%;
-  height:450px;
-  background-image: url("http://blogs.spectator.co.uk/files/2015/03/468201140.jpg");
+  background-image: url("ukip.jpg");
   display: block;
 }
 
