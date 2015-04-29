@@ -60,6 +60,7 @@ h2{position: relative;
   padding: 30px;
   color: #4c4e4d;
    border-top: 1px solid #e2e2e2;
+   border-bottom: 1px solid #e2e2e2;
   
 
 }
@@ -221,6 +222,20 @@ a:link{
   /*Legend*/
 
   .key {
+  position:relative;
+  left:600px;
+  width: 50%;
+  font-size: 0;
+    color: #000000;
+    font: 9pt Arial, sans-serif;
+    margin-left: 0px;
+    margin-top: -25px;
+    top:-66px;
+    left:769px;
+    
+
+  }
+  .key-source {
   position:relative;
   left:600px;
   width: 50%;
