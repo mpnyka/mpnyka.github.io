@@ -2,6 +2,10 @@
 <meta charset="utf-8">
 <head>
      <link rel="stylesheet" type="text/css" href="style.css">
+     <script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script src="bullet.js"></script>
+
     <title></title>
   </head>
   <body>
@@ -22,40 +26,46 @@
    Updated by <a href="http://twitter.com/mireiatriguero">Mireia Triguero Roura</a> on April 28, 2015
    </div>
 <div class="post">
-  <p>“26 million people in Europe are looking for jobs. And whose jobs are they after?” Big signs like this sprung in the UK preceding the elections. The message is clear: if Britons don’t have jobs it’s because of all those immigrants that are coming to steal them. It isn’t a new message either. There have always been people everywhere in Europe who believe that. What’s worrisome is that the number of people who believe this is increasing after 7 years of economic uncertainty and sustained high levels of unemployment. </p>
+  <p>“Guess whose children EU migrants want to eat.” This is one of the messages that the UK Independence Party, the ultra-right British party, used to<a href="http://www.independent.co.uk/news/uk/home-news/ukip-accused-of-scaremongering-in-antiimmigration-poster-campaign-ahead-of-european-elections-9273100.html"> campaign for the 2014 EU parliament election</a>. “26 million people in Europe are looking for jobs. And whose jobs are they after?” reads another sign. The message is clear: if Britons don’t have jobs it’s because of all those immigrants who are coming to steal them.  </p>
 
-<p>However, how much has immigration actually increased in these countries?</p> 
-   <p>Seven years after the financial crisis, Europe is still soring. With elections scheduled in eleven of the 28 member-states of the European Union, the political debate has been highly occupied with Eurosceptic discourses, and xenophobic and anti-immigration agendas. This is not surprising, considering the current economic state of Europe. Southern countries have still yet to recover to pre-crisis levels of growth and unemployment rates; Northern countries are keeping afloat with considerable lower levels of growth. </p>
+<p>It isn’t a new message either. There have always been people everywhere in Europe who believe that. What’s worrisome is that the number of people who believe this, and will vote for these parties, is increasing after 7 years of economic uncertainty and sustained high levels of unemployment. </p> 
+   <p>Seven years after the financial crisis, Europe is still soring. With elections scheduled in eleven of the 28 member-states of the European Union, the political debate has been highly occupied with Eurosceptic discourses, and xenophobic and anti-immigration agendas. This is not surprising considering the current economic state of most European countries. Southern countries have still yet to recover to pre-crisis levels of growth and employment rates; Northern countries are keeping afloat with considerable lower levels of growth. </p>
 
-<p>Immigration has become the scapegoat for politicians that cannot promise more jobs or better life quality conditions to their citizens. The truth is immigration in the European Union in general decreased after the financial crisis and has still not reached pre-crisis levels. </p>
+<p>Immigration has become the scapegoat for politicians that cannot promise more jobs or better life quality conditions to their citizens. However, how much has immigration actually increased in these countries? </p>
 
-<p>A closer look to specific countries show us that indeed, immigration patterns were affected by the crisis and its effects vary a lot depending on the countries. </p>
+<p>The truth is immigration in the European Union in general decreased after the 2008 financial crisis and has still not reached pre-crisis levels. </p>
+<p>A closer look at specific countries show us that indeed immigration patterns were affected by the crisis. But its effects vary a lot depending on the countries. In fact, the data for Spain and Germany tell (quite beautifully, if I may) the two sides of the crisis, and the enormous impact it had on immigration. </p>
 </div>
-
+<div class="graph-title">
+  INFLOW OF MIGRANTS PER YEAR </div>
 <div id="graph1"></div>
 <div class="key">
 <p class="source"> Source: OECD </div>
-<p class="post">“It’s the economy, stupid”</p>
+
+<div class="post">
+  <p>While immigration in Spain sank after 2008, it started soaring in Germany. If we consider that in 2008 more than a third of migrants inflow in Spain were foreign workers, it isn’t surprising that this pattern changed when the Spanish economy started massively destroying jobs. Conversely, Germany, whose economy was barely affected in 2008 and whose employment rate has actually been increasing since 2009, started experiencing an increase in immigration post-crisis. </p>
+  <p>A special case is the United Kingdom, where immigration has maintained substantiated levels since 2008. Why, then, a party like UKIP, whose main campaign promise is to end immigration in the UK, <a href="http://www.bbc.com/news/uk-politics-21614073"> gained popularity starting in 2011</a>, when immigration was not increasing? Looking at the evolution of the unemployment rate might give us a hint. </p>
+</div>
+<div class="graph-title">
+  UNEMPLOYMENT RATE PER YEAR </div>
 <div id="graph3"></div>
   <div class="key">
 <p class="source"> Source: Eurostat </div>
 <div class="post">
-
-
-<p>While immigration in Spain sinked after 2008, it starting soaring in Germany. This 
-
-
-<p>We see stories every day about refugee seekers dying in boats or being denied access and although this is a terrible humanitarian crisis that needs to be addressed, asylum seekers are not the biggest immigrants in Europe; Europeans are. </p>
-
-
+  <p>“It’s the economy, stupid!”</p> 
+  <p>As James Carville knew when he was helping Bill Clinton win the 1992 presidential elections, the economy is generally the key. Of course these two graphs don’t tell the whole story, but they do show that immigration is not the cause of Europeans’ grievances, as much as some politicians would like it to be. </p>
+  <p>Ok, I’ll concede, maybe there are less immigrants coming, but what if these immigrants are the ones taking all the jobs, as Nigel Farage suggests? What if the natives are the ones making up the unemployment rate? A third graph can help understand that.</p>
 </div>
 
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="http://d3js.org/d3.v3.js"></script>
-<script src="bullet.js"></script>
-<script src="d3.legend.js"></script>
 
-<div id="graph2">
+
+<div class="graph-title">
+  EMPLOYMENT RATE OF FOREIGN-BORN AND NATIVE-BORN LABOR</div>
+<div id="graph2"><span class="key-arrow2">
+    &#8595; highest rate for natives (last 20 years)</span>
+  <span class="key-arrow1">
+    highest rate for foreigners (last 20 years) &#8595;</span>
+  
   </div>
   <div class="key">
     <div class="source"> Source: OECD </div>
@@ -67,6 +77,10 @@
     
   </div>
  </div>
+ <div class="post">
+  <p>In the three countries and the European Union as a whole, the employment rate for native is higher than that for foreign-born workers. As a matter of fact, Spain is the only country of the three in which the maximum employment rate (in the last 20 years) for foreigners is higher than for natives. Interestingly, Spain doesn’t have any national parties campaigning on anti-immigration policies. </p>
+  <p>Immigration is certainly a big problem in Europe. We see stories every day about asylum seekers <a href="http://www.nytimes.com/2015/04/21/world/europe/european-union-immigration-migrant-ship-capsizes.html?_r=0">dying in boats or being denied access</a>; increased xenophobia and failed multiculturalism policies are creating ever more divided communities. How to absorb this new influx of immigration and how to successfully integrate diversity in highly homogeneous nation-states are two of the biggest challenges Europe faces. But immigration is not the problem some politicians want us to believe it is. </p>
+</div>
  
 
 <script>

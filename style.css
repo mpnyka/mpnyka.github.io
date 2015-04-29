@@ -129,11 +129,8 @@ a:link{
   width:100%;
 }
 
-span{
-	  display: table-cell;
-	    padding-right: 2em;
-  border-right: solid 1px #d9d6d7;
-}
+
+
 .byline{
   position:relative;
 	font-family: Harriet,serif;
@@ -190,13 +187,24 @@ span{
   color: #999;
     
 }
+.graph-title {
+  font-family: arial,helvetica,sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.9px;
+  color: #000;
+  position: relative;
+  left: 100px;
+
+    
+}
 
 /*second graph*/
 
 
 .bullet { font: 10px sans-serif; }
 .bullet .marker { stroke: #000; stroke-width: 2px; }
-.bullet .tick line { stroke: #666; stroke-width: .5px; }
+.bullet .marker2 { stroke: #b6b0b6; stroke-width: 2px; }
+.bullet .tick line { stroke: #ab83ab; stroke-width: .5px; }
 .bullet .range.s0 { fill: #eee; }
 .bullet .range.s1 { fill: #cdccce; }
 .bullet .range.s2 { fill: #cdccce; }
@@ -223,7 +231,7 @@ span{
     margin-top: -25px;
 }
 .key-item {
-  font-family: 'nyt-franklin', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-weight: 200;
   margin-right: 100px;
   display: inline-block;
@@ -242,3 +250,25 @@ span{
 .white-age-key-box {
   background-color: #634163;
 }
+
+
+.key-arrow1 {
+  left:600px;
+  width: 50%;
+  font-size: 0;
+    color: #b6b0b6;
+    font: 9pt Arial, sans-serif;
+    margin-left: 0px;
+    margin-top: -25px;
+    padding-left:298px;
+  }
+  .key-arrow2 {
+  left:600px;
+  width: 50%;
+  font-size: 0;
+    color: #000;
+    font: 9pt Arial, sans-serif;
+    margin-left: 0px;
+    margin-top: -25px;
+    padding-left:541px;
+  }

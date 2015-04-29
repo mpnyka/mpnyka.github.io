@@ -1,7 +1,7 @@
 [
   
-  {"title":"United Kingdom","subtitle":"%","ranges":[68,68,100],"measures":[71,71],"markers":[72,68]},
-  {"title":"Germany","subtitle":"%","ranges":[68,68,100],"measures":[74,74],"markers":[74,68]},
-  {"title":"Spain","subtitle":"%","ranges":[51,51,100],"measures":[56,56],"markers":[64,70]},
-  {"title":"EU","subtitle":"%","ranges":[61.4,61.4,100],"measures":[64.5,64.5],"markers":[65.9,64.4]}
+  {"title":"United Kingdom","subtitle":"%","ranges":[68,68,100],"measures":[71,71],"markers":[72], "markers2": [68]},
+  {"title":"Germany","subtitle":"%","ranges":[68,68,100],"measures":[74,74],"markers":[74], "markers2": [68]},
+  {"title":"Spain","subtitle":"%","ranges":[51,51,100],"measures":[56,56],"markers":[64], "markers2": [70]},
+  {"title":"EU","subtitle":"%","ranges":[61.4,61.4,100],"measures":[64.5,64.5],"markers":[65.9], "markers2": [64.4]}
 ]
