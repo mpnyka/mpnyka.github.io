@@ -47,6 +47,8 @@ h2{position: relative;
   padding: 10px;
   color: #4c4e4d;
   align:center;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
 
 
 }
@@ -57,6 +59,8 @@ h2{position: relative;
   position: relative;
   padding: 30px;
   color: #4c4e4d;
+   border-top: 1px solid #e2e2e2;
+  
 
 }
 
@@ -66,6 +70,9 @@ h2{position: relative;
   position: relative;
   padding: 10px;
   color: #4c4e4d;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  
 
 }
 
@@ -181,6 +188,7 @@ span{
   font-family: Alright Sans,sans-serif;
   font-size: 10px;
   color: #999;
+    
 }
 
 /*second graph*/
@@ -204,7 +212,7 @@ span{
 
   /*Legend*/
 
-  .g-age-key {
+  .key {
   position:relative;
   left:600px;
   width: 50%;
@@ -212,9 +220,9 @@ span{
     color: #000000;
     font: 9pt Arial, sans-serif;
     margin-left: 0px;
-    margin-top: -20px;
+    margin-top: -25px;
 }
-.g-age-key-item {
+.key-item {
   font-family: 'nyt-franklin', Arial, sans-serif;
   font-weight: 200;
   margin-right: 100px;
