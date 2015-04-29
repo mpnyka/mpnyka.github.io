@@ -41,7 +41,17 @@
 <script src="bullet.js"></script>
 <script src="d3.legend.js"></script>
 
-<div id="graph2"> </div>
+<div id="graph2">
+  <div class="g-age-key">
+    <div class="g-age-key-item">
+      <span class="age-key-box black-age-key-box"></span>Foreign-born employment rate (%)
+    </div>
+    <div class="g-age-key-item">
+      <span class="age-key-box white-age-key-box"></span>Native-born employment rate (%)
+    </div>
+  </div>
+ </div>
+ 
 <h2> hola? </h2>
 
 <script>
@@ -78,7 +88,11 @@ d3.json("bullets.json", function(error, data) {
       .attr("class", "subtitle")
       .attr("dy", "1em")
       .text(function(d) { return d.subtitle; });
-
+  title.append("text")
+   .attr("x", 400)
+   .attr("dy", 252)
+   .attr("class", "source")
+   .text("Source: OECD");
   
 });
 })();
@@ -182,7 +196,7 @@ d3.tsv("data2.tsv", function(error, data) {
       .attr("height", height);
   city.append("text")
    .attr("x", 400)
-   .attr("dy", 255)
+   .attr("dy", 252)
    .attr("class", "source")
    .text("Source: OECD")
      });
@@ -291,7 +305,7 @@ d3.tsv("data4.tsv", function(error, data) {
       .attr("height", height);
   city.append("text")
    .attr("x", 400)
-   .attr("dy", 255)
+   .attr("dy", 252)
    .attr("class", "source")
    .text("Source: Eurostat")
   

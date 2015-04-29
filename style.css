@@ -177,3 +177,34 @@ span{
   stroke:black;
   opacity:0.8;}
 
+  /*Legend*/
+
+  .g-age-key {
+  position:relative;
+  left:700px;
+  width: 50%;
+  font-size: 0;
+    color: #000000;
+    font: 9pt Arial, sans-serif;
+    margin-left: 0px;
+}
+.g-age-key-item {
+  font-family: 'nyt-franklin', Arial, sans-serif;
+  font-weight: 200;
+  margin-right: 100px;
+  display: inline-block;
+  padding: 10px;
+}
+.age-key-box {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  display: inline-block;
+  margin-right: 6px;
+}
+.black-age-key-box {
+  background-color: #cdccce;
+}
+.white-age-key-box {
+  background-color: #634163;
+}
