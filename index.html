@@ -37,7 +37,7 @@
 <p>A closer look at specific countries show us that indeed immigration patterns were affected by the crisis. But its effects vary a lot depending on the countries. In fact, the data for Spain and Germany tell (quite beautifully, if I may) the two sides of the crisis, and the enormous impact it had on immigration. </p>
 </div>
 <div class="graph-title">
-  INFLOW OF MIGRANTS PER YEAR </div>
+  After the 2008 financial crisis, immigration sunk in Spain </div>
 <div id="graph1"></div>
 <div class="key-source">
 <p class="source"> Source: OECD </div>
@@ -47,20 +47,29 @@
   <p>A special case is the United Kingdom, where immigration has maintained substantiated levels since 2008. Why, then, a party like UKIP, whose main campaign promise is to end immigration in the UK, <a href="http://www.bbc.com/news/uk-politics-21614073"> gained popularity starting in 2011</a>, when immigration was not increasing? Looking at the evolution of the unemployment rate might give us a hint. </p>
 </div>
 <div class="graph-title">
-  UNEMPLOYMENT RATE PER YEAR </div>
+  In 2008 unemployment rate in Spain soared; in Germany it started declining </div>
 <div id="graph3"></div>
   <div class="key-source">
 <p class="source"> Source: Eurostat </div>
 <div class="post">
   <p>“It’s the economy, stupid!”</p> 
   <p>As James Carville knew when he was helping Bill Clinton win the 1992 presidential elections, the economy is generally the key. Of course these two graphs don’t tell the whole story, but they do show that immigration is not the cause of Europeans’ grievances, as much as some politicians would like it to be. </p>
+</div>
+  <div class="graph-title">
+  In 2008 unemployment rate in Spain soared; in Germany it started declining </div>
+  <div class="graph">
+<span id="graph4"></span>
+ <span id="graph5"></span>
+ <span id="graph6"></span>
+</div>
+<div class="post">
   <p>Ok, I’ll concede, maybe there are less immigrants coming, but what if these immigrants are the ones taking all the jobs, as Nigel Farage suggests? What if the natives are the ones making up the unemployment rate? A third graph can help understand that.</p>
 </div>
 
 
 
 <div class="graph-title">
-  EMPLOYMENT RATE OF FOREIGN-BORN AND NATIVE-BORN LABOR</div>
+  Employment rate of foreign-born labor is lower than native-born</div>
 <div id="graph2"><span class="key-arrow2">
     &#8595; highest rate for natives (last 20 years)</span>
   <span class="key-arrow1">
@@ -81,8 +90,9 @@
  <div class="post">
   <p>In the three countries and the European Union as a whole, the employment rate for native is higher than that for foreign-born workers. As a matter of fact, Spain is the only country of the three in which the maximum employment rate (in the last 20 years) for foreigners is higher than for natives. Interestingly, Spain doesn’t have any national parties campaigning on anti-immigration policies. </p>
   <p>Immigration is certainly a big problem in Europe. We see stories every day about asylum seekers <a href="http://www.nytimes.com/2015/04/21/world/europe/european-union-immigration-migrant-ship-capsizes.html?_r=0">dying in boats or being denied access</a>; increased xenophobia and failed multiculturalism policies are creating ever more divided communities. How to absorb this new influx of immigration and how to successfully integrate diversity in highly homogeneous nation-states are two of the biggest challenges Europe faces. But immigration is not the problem some politicians want us to believe it is. </p>
+
 </div>
- 
+
  <div class="credit">
   Photo by <a href="http://dankitwood.com/">Dan Kitwood</a> | Getty Images </div>
 
@@ -330,5 +340,292 @@ d3.tsv("data4.tsv", function(error, data) {
   
      });
 })();
+</script>
+
+<script>
+(function(){
+var margin = {top: 30, right: 40, bottom: 30, left: 50},
+    width = 300 - margin.left - margin.right,
+    height = 200 - margin.top - margin.bottom;
+
+var parseDate = d3.time.format("%Y%m%d").parse;
+
+var x = d3.time.scale().range([0, width]);
+var y0 = d3.scale.linear().range([height, 0]);
+var y1 = d3.scale.linear().range([height, 0]);
+
+var xAxis = d3.svg.axis().scale(x)
+    .orient("bottom").ticks(5);
+
+var yAxisLeft = d3.svg.axis().scale(y0)
+    .orient("left").ticks(5);
+
+var yAxisRight = d3.svg.axis().scale(y1)
+    .orient("right").ticks(5); 
+
+var valueline = d3.svg.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y0(d.close); });
+    
+var valueline2 = d3.svg.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y1(d.open); });
+  
+var svg = d3.select("#graph4")
+    .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+        .attr("transform", 
+              "translate(" + margin.left + "," + margin.top + ")");
+
+// Get the data
+    d3.csv("data2a-germany.csv", function(error, data) {
+        data.forEach(function(d) {
+            d.date = parseDate(d.date);
+            d.close = +d.close;
+            d.open = +d.open;
+        });
+  
+
+    // Scale the range of the data
+    x.domain(d3.extent(data, function(d) { return d.date; }));
+    y0.domain([0, d3.max(data, function(d) {
+    return Math.max(d.close); })]); 
+    y1.domain([0, d3.max(data, function(d) { 
+    return Math.max(d.open); })]);
+
+    svg.append("path")        // Add the valueline path.
+        .attr("d", valueline(data))
+        .style("stroke", "#634163")
+        .style("fill", "none");
+
+    svg.append("path")        // Add the valueline2 path.
+        .style("stroke", "#cdccce")
+        .style("fill", "none")
+        .attr("d", valueline2(data));
+
+    svg.append("g")            // Add the X Axis
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+    svg.append("g")
+        .attr("class", "y axis")
+        .style("fill", "#634163")
+        .call(yAxisLeft)
+      .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Immigrants (thousands)");
+
+    svg.append("g")       
+        .attr("class", "y axis")  
+        .attr("transform", "translate(" + width + " ,0)") 
+        .style("fill", "#cdccce")   
+        .call(yAxisRight)
+      .append("text")
+        .attr("transform", "rotate(90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "start")
+        .text("Unemployment rate (%)");
+
+  });
+})();
+
+</script>
+<script>
+(function(){
+var margin = {top: 30, right: 40, bottom: 30, left: 50},
+    width = 300 - margin.left - margin.right,
+    height = 200 - margin.top - margin.bottom;
+
+var parseDate = d3.time.format("%Y%m%d").parse;
+
+var x = d3.time.scale().range([0, width]);
+var y0 = d3.scale.linear().range([height, 0]);
+var y1 = d3.scale.linear().range([height, 0]);
+
+var xAxis = d3.svg.axis().scale(x)
+    .orient("bottom").ticks(5);
+
+var yAxisLeft = d3.svg.axis().scale(y0)
+    .orient("left").ticks(5);
+
+var yAxisRight = d3.svg.axis().scale(y1)
+    .orient("right").ticks(5); 
+
+var valueline = d3.svg.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y0(d.close); });
+    
+var valueline2 = d3.svg.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y1(d.open); });
+  
+var svg = d3.select("#graph5")
+    .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+        .attr("transform", 
+              "translate(" + margin.left + "," + margin.top + ")");
+
+// Get the data
+    d3.csv("data2a-spain.csv", function(error, data) {
+        data.forEach(function(d) {
+            d.date = parseDate(d.date);
+            d.close = +d.close;
+            d.open = +d.open;
+        });
+  
+
+    // Scale the range of the data
+    x.domain(d3.extent(data, function(d) { return d.date; }));
+    y0.domain([0, d3.max(data, function(d) {
+    return Math.max(d.close); })]); 
+    y1.domain([0, d3.max(data, function(d) { 
+    return Math.max(d.open); })]);
+
+    svg.append("path")        // Add the valueline path.
+        .attr("d", valueline(data))
+        .style("stroke", "#634163")
+        .style("fill", "none");
+
+    svg.append("path")        // Add the valueline2 path.
+        .style("stroke", "#cdccce")
+        .style("fill", "none")
+        .attr("d", valueline2(data));
+
+    svg.append("g")            // Add the X Axis
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+    svg.append("g")
+        .attr("class", "y axis")
+        .style("fill", "#634163")
+        .call(yAxisLeft)
+       .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Immigrants (thousands)");
+
+    svg.append("g")       
+        .attr("class", "y axis")  
+        .attr("transform", "translate(" + width + " ,0)") 
+        .style("fill", "#cdccce")   
+        .call(yAxisRight)
+      .append("text")
+        .attr("transform", "rotate(90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "start")
+        .text("Unemployment rate (%)");
+
+  });
+})();
+
+</script>
+<script>
+(function(){
+var margin = {top: 30, right: 40, bottom: 30, left: 50},
+    width = 300 - margin.left - margin.right,
+    height = 200 - margin.top - margin.bottom;
+
+var parseDate = d3.time.format("%Y%m%d").parse;
+
+var x = d3.time.scale().range([0, width]);
+var y0 = d3.scale.linear().range([height, 0]);
+var y1 = d3.scale.linear().range([height, 0]);
+
+var xAxis = d3.svg.axis().scale(x)
+    .orient("bottom").ticks(5);
+
+var yAxisLeft = d3.svg.axis().scale(y0)
+    .orient("left").ticks(5);
+
+var yAxisRight = d3.svg.axis().scale(y1)
+    .orient("right").ticks(5); 
+
+var valueline = d3.svg.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y0(d.close); });
+    
+var valueline2 = d3.svg.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y1(d.open); });
+  
+var svg = d3.select("#graph6")
+    .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+        .attr("transform", 
+              "translate(" + margin.left + "," + margin.top + ")");
+
+// Get the data
+    d3.csv("data2a-uk.csv", function(error, data) {
+        data.forEach(function(d) {
+            d.date = parseDate(d.date);
+            d.close = +d.close;
+            d.open = +d.open;
+        });
+  
+
+    // Scale the range of the data
+    x.domain(d3.extent(data, function(d) { return d.date; }));
+    y0.domain([0, d3.max(data, function(d) {
+    return Math.max(d.close); })]); 
+    y1.domain([0, d3.max(data, function(d) { 
+    return Math.max(d.open); })]);
+
+    svg.append("path")        // Add the valueline path.
+        .attr("d", valueline(data))
+        .style("stroke", "#634163")
+        .style("fill", "none");
+
+    svg.append("path")        // Add the valueline2 path.
+        .style("stroke", "#cdccce")
+        .style("fill", "none")
+        .attr("d", valueline2(data));
+
+    svg.append("g")            // Add the X Axis
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+    svg.append("g")
+        .attr("class", "y axis")
+        .style("fill", "#634163")
+        .call(yAxisLeft)
+
+.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Immigrants (thousands)");
+
+    svg.append("g")       
+        .attr("class", "y axis")  
+        .attr("transform", "translate(" + width + " ,0)") 
+        .style("fill", "#cdccce")   
+        .call(yAxisRight)
+      .append("text")
+        .attr("transform", "rotate(90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "start")
+        .text("Unemployment rate (%)");
+
+  });
+})();
+
 </script>
 </body>
