@@ -56,7 +56,7 @@
   <p>As James Carville knew when he was helping Bill Clinton win the 1992 presidential elections, the economy is generally the key. Of course these two graphs don’t tell the whole story, but they do show that immigration is not the cause of Europeans’ grievances, as much as some politicians would like it to be. </p>
 </div>
   <div class="graph-title">
-  In 2008 unemployment rate in Spain soared; in Germany it started declining </div>
+  There's an inverse correlation between unemployment rate and number of immigrants </div>
   <div class="graph">
 <span id="graph4"></span>
  <span id="graph5"></span>
@@ -302,6 +302,8 @@ d3.tsv("data4.tsv", function(error, data) {
     d3.max(cities, function(c) { return d3.max(c.values, function(v) { return v.close; }); })
   ]);
 
+ 
+
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
@@ -355,7 +357,7 @@ var y0 = d3.scale.linear().range([height, 0]);
 var y1 = d3.scale.linear().range([height, 0]);
 
 var xAxis = d3.svg.axis().scale(x)
-    .orient("bottom").ticks(5);
+    .orient("bottom").ticks(4);
 
 var yAxisLeft = d3.svg.axis().scale(y0)
     .orient("left").ticks(5);
@@ -364,10 +366,12 @@ var yAxisRight = d3.svg.axis().scale(y1)
     .orient("right").ticks(5); 
 
 var valueline = d3.svg.line()
+    .interpolate("basis")
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y0(d.close); });
     
 var valueline2 = d3.svg.line()
+    .interpolate("basis")
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y1(d.open); });
   
@@ -459,10 +463,12 @@ var yAxisRight = d3.svg.axis().scale(y1)
     .orient("right").ticks(5); 
 
 var valueline = d3.svg.line()
+    .interpolate("basis")
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y0(d.close); });
     
 var valueline2 = d3.svg.line()
+    .interpolate("basis")
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y1(d.open); });
   
@@ -553,11 +559,14 @@ var yAxisLeft = d3.svg.axis().scale(y0)
 var yAxisRight = d3.svg.axis().scale(y1)
     .orient("right").ticks(5); 
 
+
 var valueline = d3.svg.line()
+    .interpolate("basis")
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y0(d.close); });
     
 var valueline2 = d3.svg.line()
+    .interpolate("basis")
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y1(d.open); });
   
@@ -594,6 +603,7 @@ var svg = d3.select("#graph6")
         .style("stroke", "#cdccce")
         .style("fill", "none")
         .attr("d", valueline2(data));
+
 
     svg.append("g")            // Add the X Axis
         .attr("class", "x axis")
