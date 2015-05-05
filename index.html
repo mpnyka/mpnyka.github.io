@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
-   <meta property='og:image' content='http://mpnyka.github.io/ukip.jpg'/>
+   <meta property="og:image" content="http://mpnyka.github.io/ukip.jpg"/>
+   <meta property="og:title" content="They Are Coming to Eat Your Children: Why immigration in Europe is not the problem some politicians want it to be"/>
+   <meta property="og:site_name" content="Mireia Triguero Roura"/>
      <link rel="stylesheet" type="text/css" href="style.css">
      <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/d3.v3.js"></script>
@@ -67,7 +69,7 @@
 <div class="key-source">
 <p class="source"> Source: OECD </div>
 <div class="post">
-  <p>Ok, I’ll concede, maybe there are less immigrants coming, but what if these immigrants are the ones taking all the jobs, as Nigel Farage suggests? What if the natives are the ones making up the unemployment rate? A third graph can help understand that.</p>
+  <p>OK. I’ll concede, maybe there are less immigrants coming, but what if these immigrants are the ones taking all the jobs, as Nigel Farage suggests? What if the natives are the ones making up the unemployment rate? A third graph can help understand that.</p>
 </div>
 
 
@@ -109,13 +111,11 @@
 <a href="http://www.facebook.com/sharer.php?u=http://mpnyka.github.io/" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" /></a>
  
 <!-- Twitter -->
-<a href="http://twitter.com/share?url=http://mpnyka.github.io/&text=They Are Comming to Eat your Children&hashtags=EUimmigration&handler=@mireiatriguero" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" /></a>
+<a href="http://twitter.com/share?url=http://mpnyka.github.io/&text=They Are Comming to Eat your Children&hashtags=EUimmigration&via=mireiatriguero" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" /></a>
  
 <!-- Google+ -->
 <a href="https://plus.google.com/share?url=http://mpnyka.github.io/" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/google.png" alt="Google" /></a>
  
-<!-- Digg -->
-<a href="http://www.digg.com/submit?url=http://mpnyka.github.io/" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/diggit.png" alt="Digg" /></a>
  
 <!-- Reddit -->
 <a href="http://reddit.com/submit?url=http://mpnyka.github.io/&title=They Are Comming to Eat your Children: Why immigration in Europe is not the problem some politicians want it to be" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" /></a>
@@ -187,6 +187,7 @@ var x = d3.time.scale()
     .range([0, width]);
 
 var y = d3.scale.linear()
+
     .range([height, 0]);
 
 var color = d3.scale.category20b()
@@ -291,7 +292,9 @@ var x = d3.time.scale()
     .range([0, width]);
 
 var y = d3.scale.linear()
+    .domain([0,26])
     .range([height, 0]);
+
 
 var color = d3.scale.category20b()
 
@@ -385,8 +388,8 @@ d3.tsv("data4.tsv", function(error, data) {
 <script>
 (function(){
 var margin = {top: 30, right: 40, bottom: 30, left: 50},
-    width = 300 - margin.left - margin.right,
-    height = 200 - margin.top - margin.bottom;
+    width = 310 - margin.left - margin.right,
+    height = 220 - margin.top - margin.bottom;
 
 var parseDate = d3.time.format("%Y%m%d").parse;
 
@@ -489,8 +492,8 @@ var svg = d3.select("#graph4")
 <script>
 (function(){
 var margin = {top: 30, right: 40, bottom: 30, left: 50},
-    width = 300 - margin.left - margin.right,
-    height = 200 - margin.top - margin.bottom;
+    width = 310 - margin.left - margin.right,
+    height = 220 - margin.top - margin.bottom;
 
 var parseDate = d3.time.format("%Y%m%d").parse;
 
@@ -593,8 +596,8 @@ var svg = d3.select("#graph5")
 <script>
 (function(){
 var margin = {top: 30, right: 40, bottom: 30, left: 50},
-    width = 300 - margin.left - margin.right,
-    height = 200 - margin.top - margin.bottom;
+    width = 310 - margin.left - margin.right,
+    height = 220 - margin.top - margin.bottom;
 
 var parseDate = d3.time.format("%Y%m%d").parse;
 
