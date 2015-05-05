@@ -50,6 +50,8 @@ h2{position: relative;
   align:center;
   border-top: 1px solid #e2e2e2;
   border-bottom: 1px solid #e2e2e2;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 #graph1{
   font: 11px arial,helvetica,sans-serif;
@@ -120,7 +122,9 @@ h2{position: relative;
   font-weight: 400;
   font-style: normal;
   line-height: 1.5;
-  z-index: 1
+  z-index: 1;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 section { 
@@ -180,6 +184,17 @@ a:link{
   padding-top: 18px;
   border-top: 1px solid #e2e2e2;
 }
+.social{
+  position:relative;
+  font-family: Harriet,serif;
+  font-style: italic;
+  font-size: 15px;
+  margin-top: 7.5px;
+  margin-bottom: 15px;
+  text-align: center;
+  z-index: 3;
+  padding-top: 18px;
+}
 .caption {
 	  color: #979797;
   font-size: .8em;
@@ -188,7 +203,7 @@ a:link{
   display: table;
   width: 100%;
 }
-.social
+
 
 path { 
     stroke: steelblue;
@@ -235,15 +250,24 @@ path {
 }
 .graph-title {
   font-family: arial,helvetica,sans-serif;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 18px;
+  /*font-weight: bold;*/
   letter-spacing: -0.9px;
   color: #000;
   position: relative;
-  left: 100px;
-
-    
+  left: 15px;
 }
+
+.graph-title2 {
+  font-family: arial,helvetica,sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: -0.9px;
+  color: #C5C4C5;
+  position: relative;
+  left: 15px;
+}
+
 
 /*second graph*/
 
@@ -288,7 +312,7 @@ path {
   font-size: 0;
     color: #000000;
     font: 9pt Arial, sans-serif;
-    margin-left: 0px;
+    margin-left: 211px;
     margin-top: -25px;
 }
 .key-item {
@@ -333,3 +357,12 @@ path {
     margin-top: -25px;
     padding-left:541px;
   }
+
+  #share-buttons img {
+width: 35px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline;
+
+}
