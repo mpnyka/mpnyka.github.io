@@ -21,11 +21,15 @@ body{
 	right:30%;
 	top:30%;
 	padding:10px;
-	
 	font-family: "museo-slab", serif;
 
 }
 mark{
 	background-color: transparent;
 	color: #D11255;
+}
+.menu{
+	font-family: "droid-sans-mono", sans-serif;
+	font-size:14px;
+
 }
