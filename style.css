@@ -31,5 +31,8 @@ mark{
 .menu{
 	font-family: "droid-sans-mono", sans-serif;
 	font-size:14px;
+	left: 10%;
+  	position: fixed;
+  	top: 35%;
 
 }
