@@ -2,7 +2,9 @@ body{
 
 	margin:0;
 	font-size: 100%;
-	font-family: "droid-sans-mono", sans-serif;
+	font-family: "museo-slab", serif;
+	height: 100%;
+	background-color: #AB3F43;
 	
 }
 
@@ -10,8 +12,8 @@ body{
 	display: block;
   position: relative;
   width: 100%;
-  max-width: 960px;
   min-height: 700px;
+  height: 100%;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box; 
@@ -96,23 +98,22 @@ body{
 }
 
 img{
-   width: 170%;
+   width: 90%;
 }
 
 
 .container2{
-	display: block;
-  position: relative;
+	/*display: block;
+  position: relative;*/
   width: 100%;
 padding-left: 145px;
 padding-top: 10px;
   margin: 0 auto;
   box-sizing: border-box; 
 	background-color: #AB3F43;
-	
 }
 
-#selfie{
+.selfie{
 	width: 56.6666666667%; 
 	margin-bottom: 3%;
 }
@@ -121,6 +122,7 @@ padding-top: 10px;
 #ego{
 	top:25%;
 	left:10%;
+	padding-left: 25%;
 	font-family: "droid-sans-mono", sans-serif;
 	letter-spacing: -1px;
 	font-size: 20px;
@@ -129,6 +131,7 @@ padding-top: 10px;
 
 #clips{
 	padding-top: 50px;
+	padding-left: 4%;
 	left:10%;
 	font-family: "droid-sans-mono", sans-serif;
 	letter-spacing: -1px;
@@ -136,10 +139,11 @@ padding-top: 10px;
 	color: white;
 	float:none;
 }
+}
 
 p{
 	font-family: "museo-slab", serif;
-	font-size: 14px;
+
 }
 
 span{
@@ -149,7 +153,8 @@ span{
 
 .intro{
 	font-family: "museo-slab", serif;
-	font-size: 14px;
+	color: white;
+	
 }
 
 .clips{
@@ -163,6 +168,7 @@ mark{
 .menu{
 	font-family: "droid-sans-mono", sans-serif;
 	font-size:14px;
+	padding-left: 25%;
 
 }
 a{
@@ -174,3 +180,28 @@ a{
 ::selection {
   background-color: #1D2624;
 }
+
+#box    {  width:90%;
+           box-shadow:inset 1px 1px 40px 0 rgba(0,0,0,.45);
+          border-bottom:2px solid #fff;
+          border-right:2px solid #fff;
+          margin:5% auto 0 auto; 
+          background:url(http://mpnyka.github.io/mireia.jpg);
+  background-size:cover;
+border-radius:5px;
+overflow:hidden;}
+
+#overlay    {  background:rgba(0,0,0,.75);
+               text-align:left;
+               padding:45px;
+               opacity:0;
+               -webkit-transition: opacity .25s ease;
+-moz-transition: opacity .25s ease;}
+
+#box:hover #overlay {
+               opacity:1;}
+
+#plus       {  font-family:Helvetica;
+               font-weight:900;
+               color:rgba(255,255,255,.85);
+               font-size:96px;}
