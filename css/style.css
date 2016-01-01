@@ -28,7 +28,7 @@ body{
    }
 
 /* For devices larger than 400px */
-@media (min-width: 100%) {
+@media (min-width: 400px) {
   .container1 {
     width: 85%;
     padding: 0; }
@@ -39,7 +39,7 @@ body{
 }
 
 /* For devices larger than 550px */
-@media (min-width: 100%) {
+@media (min-width: 550px) {
   .container {
     width: 80%; }
   .container2{
@@ -111,8 +111,8 @@ img{
 
 
 .container2{
-	/*display: block;
-  position: relative;*/
+	/*display: block;*/
+  position: absolute;
   width: 100%;
 padding-left: 145px;
 padding-top: 10px;
