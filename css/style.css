@@ -36,7 +36,7 @@ body{
 
 /* For devices larger than 550px */
 @media (min-width: 550px) {
-  .container {
+  .container1 {
     width: 80%; }
   .column,
   .columns {
