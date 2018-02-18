@@ -191,7 +191,8 @@ a:hover   {color:#D9C8C8;
 
 
 ::selection {
-  background-color: #1D2624;
+	background-color: #1D2624;
+	color:white;
 }
 
 #box    {  width:90%;
