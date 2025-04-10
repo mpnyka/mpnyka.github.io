@@ -69,18 +69,22 @@ body{
   }
 
   .right-column {
-    flex: 3;
+    flex: 4;
   }
 }
 
 img{
-   width: 70%;
+   width: 80%;
 }
 
 
 .selfie{
-	width: 56.6666666667%; 
+	width: 100%; 
+  /*max-width: 800px;*/       /* Set a maximum width to prevent the image from becoming too large */
 	margin-bottom: 3%;
+  display: block;         /* Remove inline-block spacing issues */
+  height: auto;           /* Maintain the aspect ratio */
+  margin: 0 auto;
 }
 
 #ego{
@@ -115,10 +119,10 @@ span{
 }
 
 .intro{
-	font-family: "museo-slab", serif;
-	color: black;
-	padding-top: 5%;
-	padding-bottom: 15%;
+  font-family: "Inter", sans-serif;	
+  color: black;
+	padding-top: 1%;
+	padding-bottom: 0%;
 	
 }
 
