@@ -20,118 +20,76 @@ body{
   background-color: white;
 
 }
-.column,
-.columns {
-  width: 100%;
-  float: left;
-  box-sizing: border-box;
-   }
 
-/* For devices larger than 400px */
-@media (min-width: 400px) {
-  .container1 {
-    width: 85%;
-    padding: 0;
-    margin-right: 0; }
-  .container2{
-  	width: 85%;
-    padding: 0;
-    margin-right: 0; }
+.container1 .flex-container {
+  display: flex !important;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap
 }
 
-/* For devices larger than 550px */
-@media (min-width: 550px) {
-  .container {
-    width: 80%; }
-  .container2{
-  	width: 80%;
+
+
+.left-column {
+  flex: 2; /* Adjust to 0.5 if you want it smaller */
+  min-width: 200px;
+
+}
+
+.right-column {
+  flex: 5; /* Takes up most of the space */
+  min-width: 200px; /* Prevent overflow */
+
+}
+
+/* Small screens (phones) */
+@media (max-width: 549px) {
+  .flex-container {
+    flex-direction: column;
   }
-  .column,
-  .columns {
-    margin-left: 4%; }
-  .column:first-child,
-  .columns:first-child {
-    margin-left: 0; }
 
-  .one.column,
-  .one.columns                    { width: 4.66666666667%; }
-  .two.columns                    { width: 13.3333333333%; }
-  .three.columns                  { width: 22%;            }
-  .four.columns                   { width: 30.6666666667%; }
-  .five.columns                   { width: 39.3333333333%; }
-  .six.columns                    { width: 48%;            }
-  .seven.columns                  { width: 56.6666666667%; }
-  .eight.columns                  { width: 65.3333333333%; }
-  .nine.columns                   { width: 74.0%;          }
-  .ten.columns                    { width: 82.6666666667%; }
-  .eleven.columns                 { width: 91.3333333333%; }
-  .twelve.columns                 { width: 100%; margin-left: 0; }
+  .left-column, .right-column {
+    width: 100%;
+  }
+}
 
-  .one-third.column               { width: 30.6666666667%; }
-  .two-thirds.column              { width: 65.3333333333%; }
 
-  .one-half.column                { width: 48%; }
+//* Larger screens (tablets and up) */
+@media (min-width: 550px) {
+  .flex-container {
+    flex-direction: row;
+  }
 
-  /* Offsets */
-  .offset-by-one.column,
-  .offset-by-one.columns          { margin-left: 8.66666666667%; }
-  .offset-by-two.column,
-  .offset-by-two.columns          { margin-left: 17.3333333333%; }
-  .offset-by-three.column,
-  .offset-by-three.columns        { margin-left: 26%;            }
-  .offset-by-four.column,
-  .offset-by-four.columns         { margin-left: 34.6666666667%; }
-  .offset-by-five.column,
-  .offset-by-five.columns         { margin-left: 43.3333333333%; }
-  .offset-by-six.column,
-  .offset-by-six.columns          { margin-left: 52%;            }
-  .offset-by-seven.column,
-  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
-  .offset-by-eight.column,
-  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
-  .offset-by-nine.column,
-  .offset-by-nine.columns         { margin-left: 78.0%;          }
-  .offset-by-ten.column,
-  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
-  .offset-by-eleven.column,
-  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+  .left-column {
+    flex: 1;
+  }
 
-  .offset-by-one-third.column,
-  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
-  .offset-by-two-thirds.column,
-  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
-
-  .offset-by-one-half.column,
-  .offset-by-one-half.columns     { margin-left: 52%; }
-
+  .right-column {
+    flex: 4;
+  }
 }
 
 img{
-   width: 100%;
+   width: 80%;
 }
 
-
-.container2{
-	/*display: block;*/
-  position: absolute;
-  width: 100%;
-padding-left: 145px;
-padding-top: 10px;
-  margin: 0 auto;
-  box-sizing: border-box; 
-	background-color: #AB3F43;
-}
 
 .selfie{
-	width: 56.6666666667%; 
+	width: 100%; 
+  /*max-width: 800px;*/       /* Set a maximum width to prevent the image from becoming too large */
 	margin-bottom: 3%;
+  display: block;         /* Remove inline-block spacing issues */
+  height: auto;           /* Maintain the aspect ratio */
+  margin: 0 auto;
 }
-
 
 #ego{
 	top:25%;
-	left:10%;
-	padding-left: 25%;
+	padding-left: 5%;
 	font-family: "droid-sans-mono", sans-serif;
 	letter-spacing: -1px;
 	font-size: 20px;
@@ -161,10 +119,10 @@ span{
 }
 
 .intro{
-	font-family: "museo-slab", serif;
-	color: black;
-	padding-top: 5%;
-	padding-bottom: 15%;
+  font-family: "Inter", sans-serif;	
+  color: black;
+	padding-top: 1%;
+	padding-bottom: 0%;
 	
 }
 
@@ -179,7 +137,7 @@ mark{
 .menu{
 	font-family: "droid-sans-mono", sans-serif;
 	font-size:14px;
-	padding-left: 25%;
+	padding-left: 10%;
 
 }
 a{
