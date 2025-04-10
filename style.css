@@ -17,6 +17,25 @@ body{
   box-sizing: border-box; 
   background-color: white;
 }
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.left-column {
+  flex: 1; /* Adjust to 0.5 if you want it smaller */
+  min-width: 200px;
+}
+
+.right-column {
+  flex: 3; /* Takes up most of the space */
+  min-width: 0; /* Prevent overflow */
+}
 .column,
 .columns {
   width: 100%;
@@ -29,6 +48,13 @@ body{
   .container {
     width: 85%;
     padding: 0; }
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .left-column, .right-column {
+    width: 100%;
+  }
 }
 
 /* For devices larger than 550px */
