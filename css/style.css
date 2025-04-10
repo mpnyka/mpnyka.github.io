@@ -114,11 +114,11 @@ p{
 }
 
 span{
-	font-family: "museo-slab", serif;
+	font-family: "droid-sans-mono", sans-serif;
 
 }
 
-.intro{
+#intro{
   font-family: "Inter", sans-serif;	
   color: black;
 	padding-top: 1%;
@@ -140,13 +140,35 @@ mark{
 	padding-left: 10%;
 
 }
+
+#language-switch{
+  padding-left: 5%;
+}
 a{
 	color: black;
   text-decoration: none;
 }
-a:hover   {color:#D9C8C8;
+a:hover   {color:#AB3F43;
 }
 
+.lang-button {
+  background: none;
+  border: none;
+  font-family: "droid-sans-mono", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.lang-button:hover {
+  text-decoration: underline; /* Optional: Adds an underline on hover */
+}
+
+.lang-button.active {
+  color: #AB3F43;
+}
 
 ::selection {
 	background-color: #1D2624;
@@ -179,11 +201,4 @@ overflow:hidden;}
                font-size:96px;}
 
 
- /*Resume*/
-.cv-head{ 
-	padding:40px;
 
-}
- .cv-name{
- 	
- }
