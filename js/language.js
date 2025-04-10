@@ -9,11 +9,11 @@
     `,
     ca: `
         <mark>hola</mark>, sóc una <mark>investigadora en ciències socials</mark> amb un <mark>doctorat en sociologia </mark>i un passat en periodisme.<br><br>
-        Tinc més de <mark>10 anys d'experiència en reserca tant qualitativa com quantitativa</mark> en entorns acadèmics i en companyia privada. La meva investigació doctoral explora les <mark>categories de tancament social</mark>, com la raça, l'ètnia i la nació: com les persones les construeixen socialment, quines conseqüències tenen per a desigualtats i com podem dissenyar <mark>millors polítiques per alleujar-les</mark>. Utilitzo una varietat de mètodes amb un enfocament en la <mark>ciència social computacional, l'estadística i la inferència causal</mark>. Per la meva tesi vaig dissenyar, implementar i analitzar una enquesta original i un experiment distribuït en 5 països. Sóc coneguda per utilitzar mètodes innovadors i saber com traduir anàlises tècnicament complicades a solucions pràctiques. Actualment treballo com a <mark>investigadora postdoctoral </mark>utilitzant mètodes computacionals i estratègies avançades d'inferència causal per entendre els efectes de les polítiques en diferents aspectes de la salut pública.
-
-Parlo  <mark>català </mark>,  <mark>castellà </mark>,  <mark>anglès </mark> i una mica de  <mark>francès </mark> amb humans;  <mark>R </mark>,  <mark>python</mark>,  <mark>sql</mark>,  <mark>html</mark>,  <mark>css</mark>,  <mark>javascript</mark> i una mica de  <mark>Stan </mark>amb ordinadors. <br><br>
-Tinc experiència donant classes  <mark>lenguatges de programació </mark>,  <mark>estadística </mark> i  <mark>inferència causal </mark> a estudiants de postgrau, així com  <mark>mètodes de recerca  </mark>a estudiants de grau.
-`,
+        Tinc més de <mark>10 anys d'experiència en reserca tant qualitativa com quantitativa</mark> en entorns acadèmics i en companyia privada. La meva investigació doctoral explora les <mark>categories de tancament social</mark>, com la raça, l'ètnia i la nació: com les persones les construeixen socialment, quines conseqüències tenen per a desigualtats i com podem dissenyar <mark>millors polítiques per alleujar-les</mark>. Utilitzo una varietat de mètodes amb un enfocament en la <mark>ciència social computacional, l'estadística i la inferència causal</mark>. Per la meva tesi vaig dissenyar, implementar i analitzar una enquesta original i un experiment distribuït en 5 països. Sóc coneguda per utilitzar mètodes innovadors i saber com traduir anàlises tècnicament complicades a solucions pràctiques. Actualment treballo com a <mark>investigadora postdoctoral </mark>utilitzant mètodes computacionals i estratègies avançades d'inferència causal per entendre els efectes de les polítiques en diferents aspectes de la salut pública.<br><br>
+        
+        Parlo  <mark>català </mark>,  <mark>castellà </mark>,  <mark>anglès </mark> i una mica de  <mark>francès </mark> amb humans;  <mark>R </mark>,  <mark>python</mark>,  <mark>sql</mark>,  <mark>html</mark>,  <mark>css</mark>,  <mark>javascript</mark> i una mica de  <mark>Stan </mark>amb ordinadors. <br><br>
+        Tinc experiència donant classes  <mark>lenguatges de programació </mark>,  <mark>estadística </mark> i  <mark>inferència causal </mark> a estudiants de postgrau, així com  <mark>mètodes de recerca  </mark>a estudiants de grau.
+    `,
 
 
      es: ` <p><mark>hola</mark>, soy un/a <mark>investigador/a de ciencias sociales</mark> con un <mark>doctorado en sociología</mark> y una formación en <a href="http://mpnyka.github.io/journalism.html" target="_blank"><mark>periodismo</mark></a>. <br><br>
@@ -45,4 +45,4 @@ Tinc experiència donant classes  <mark>lenguatges de programació </mark>,  <ma
     document.getElementById("intro").innerHTML = content[lang];
   }
 
-  renderContent(langToUse);
+  
