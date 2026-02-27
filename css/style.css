@@ -110,7 +110,8 @@ img{
 
 p{
 	font-family: "museo-slab", serif;
-
+  margin-bottom: 14px;
+  line-height: 1.5;
 }
 
 span{
@@ -200,5 +201,21 @@ overflow:hidden;}
                color:rgba(255,255,255,.85);
                font-size:96px;}
 
+.pub-links{
+  font-family: "Inter", sans-serif; 
+  color: black;
+  padding-top: 1%;
+  padding-bottom: 0%;
+  
+}
 
+.pub-links a {
+    color: #AB3F43;
+    text-decoration: none;
+}
+
+.pub-links a:hover {
+    color: #AB3F43;
+    text-decoration: underline;
+}
 
