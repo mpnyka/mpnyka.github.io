@@ -225,15 +225,6 @@ overflow:hidden;}
   
 }
 
-.pub-links a {
-    color: #AB3F43;
-    text-decoration: none;
-}
-
-.pub-links a:hover {
-    color: #AB3F43;
-    text-decoration: underline;
-}
 
 .publication{
 margin-bottom:18px;
@@ -246,7 +237,7 @@ margin-right:8px;
 
 .publication .title{
 display:block;
-font-weight:600;
+font-weight:500;
 }
 
 .publication .authors{
@@ -263,5 +254,7 @@ color:#666;
 
 .publication .links a{
 margin-right:10px;
+color: #AB3F43;
 font-size:0.9em;
 }
+
